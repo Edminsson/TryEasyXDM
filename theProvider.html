@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1>Welcome!</h1>
+		<div class="alert alert-success" role="alert">The amazing provider</div>
+	</body>
+
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/easyxdm/src/easyXDM.debug.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			var socket = new easyXDM.Socket({
+			    onMessage: function(message, origin){
+			        alert("Received '" + message + "' from '" + origin + "'");
+			        socket.postMessage("Indeed it does!");
+			    }
+			});		
+		});
+	</script>
+
+</html>
